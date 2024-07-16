@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multas</title>
+    <style>
+        body {
+            background-color: rgb(235, 235, 114);
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #cab {
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-shadow: 2px 2px black;
+            margin-bottom: 1;
+        }
+
+        #analise {
+            color: aliceblue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 1;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="cab">
+        <h1>DETRAN</h1> <img src="Desenho-de-Placa-de-Trânsito-PNG-removebg-preview.png" alt="" width="50px"
+            height="50px">
+    </div>
+  
+    <div id="analise">
+        <h3>Análise de velocidade</h3>
+        <input type="number" placeholder="Velocidade do veículo" id="calcular">
+        <input type="button" value="Verificar" onclick="calcular()">
+    </div>
+    <div id="resultado">
+        <p id="val"></p>
+    </div>
+    <script>
+        function calcular() {
+            var txt = document.getElementById('val')
+            var velocidade = document.getElementById('calcular').value
+
+            if (velocidade < 10) {
+                txt.innerText = ('Velocidade muito baixa! Multa!') 
+                document.getElementById('val').style.color = 'white';
+            } else if (velocidade >= 10 && velocidade <= 60) {
+                txt.innerText = ('Velocidade normal')
+                document.getElementById('val').style.color = 'blue';
+            }
+            else if (velocidade > 66
+            ) {
+                txt.innerText = ('Velocidade Alta! Multa!')
+                document.getElementById('val').style.color = 'red';
+            }
+        }
+    </script>
+</body>
+
+</html>
